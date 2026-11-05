@@ -1,0 +1,1504 @@
+{
+  "words": [
+    {
+      "text": "kucing",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kelinci",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "ayam",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "bebek",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "sapi",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kambing",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kuda",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "gajah",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "jerapah",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "harimau",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "singa",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "monyet",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "zebra",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "penguin",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kangguru",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "panda",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "unta",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "ular",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "buaya",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "katak",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "ikan",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "hiu",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "paus",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "lalat",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "nyamuk",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kupu-kupu",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "lebah",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "semut",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "bunglon",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "tikus",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "burung",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "babi",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "domba",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "elang",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "tupai",
+      "category": "Hewan",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "gurita",
+      "category": "Hewan",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "kepiting",
+      "category": "Hewan",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "udang",
+      "category": "Hewan",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "cumi-cumi",
+      "category": "Hewan",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "kerang",
+      "category": "Hewan",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "landak",
+      "category": "Hewan",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "komodo",
+      "category": "Hewan",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "kelelawar",
+      "category": "Hewan",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "serigala",
+      "category": "Hewan",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "koala",
+      "category": "Hewan",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "platipus",
+      "category": "Hewan",
+      "difficulty": "susah"
+    },
+    {
+      "text": "salamander",
+      "category": "Hewan",
+      "difficulty": "susah"
+    },
+    {
+      "text": "tarsius",
+      "category": "Hewan",
+      "difficulty": "susah"
+    },
+    {
+      "text": "cenderawasih",
+      "category": "Hewan",
+      "difficulty": "susah"
+    },
+    {
+      "text": "trenggiling",
+      "category": "Hewan",
+      "difficulty": "susah"
+    },
+    {
+      "text": "guru",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "dokter",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "polisi",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "tentara",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "petani",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "nelayan",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pilot",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "sopir",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "masinis",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "koki",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "perawat",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kolektor",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "penyanyi",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pelukis",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "penari",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kuli",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pembalap",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "satpam",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kasir",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pramugari",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "wartawan",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "fotografer",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pustakawan",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pedagang",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "tukang",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "komentator",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "nakhoda",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "penyiar",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "astronaut",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "hakim",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "model",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pengacara",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pesulap",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "komikus",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "mekanik",
+      "category": "Profesi",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "arsitek",
+      "category": "Profesi",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "apoteker",
+      "category": "Profesi",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "sutradara",
+      "category": "Profesi",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "peternak",
+      "category": "Profesi",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "bidan",
+      "category": "Profesi",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "dosen",
+      "category": "Profesi",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "desainer",
+      "category": "Profesi",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "resepsionis",
+      "category": "Profesi",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "editor",
+      "category": "Profesi",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "koreografer",
+      "category": "Profesi",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "aktuaris",
+      "category": "Profesi",
+      "difficulty": "susah"
+    },
+    {
+      "text": "arkeolog",
+      "category": "Profesi",
+      "difficulty": "susah"
+    },
+    {
+      "text": "kurator",
+      "category": "Profesi",
+      "difficulty": "susah"
+    },
+    {
+      "text": "notaris",
+      "category": "Profesi",
+      "difficulty": "susah"
+    },
+    {
+      "text": "meteorolog",
+      "category": "Profesi",
+      "difficulty": "susah"
+    },
+    {
+      "text": "pensil",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "penghapus",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "penggaris",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "buku",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "tas",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "meja",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kursi",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "papan",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "spidol",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kapur",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "gunting",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "lem",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pena",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "peraut",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "seragam",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "sepatu",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kaos",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "topi",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "dasi",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "piring",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "gelas",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "sendok",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "garpu",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "wajan",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "panci",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "sapu",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pel",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kemoceng",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "ember",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "gayung",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "cermin",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "sisir",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kasur",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "bantal",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "selimut",
+      "category": "Benda",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "jam",
+      "category": "Benda",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "lampu",
+      "category": "Benda",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "kipas",
+      "category": "Benda",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "televisi",
+      "category": "Benda",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "radio",
+      "category": "Benda",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "telepon",
+      "category": "Benda",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "komputer",
+      "category": "Benda",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "kulkas",
+      "category": "Benda",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "lemari",
+      "category": "Benda",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "senter",
+      "category": "Benda",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "stetoskop",
+      "category": "Benda",
+      "difficulty": "susah"
+    },
+    {
+      "text": "mikroskop",
+      "category": "Benda",
+      "difficulty": "susah"
+    },
+    {
+      "text": "termometer",
+      "category": "Benda",
+      "difficulty": "susah"
+    },
+    {
+      "text": "proyektor",
+      "category": "Benda",
+      "difficulty": "susah"
+    },
+    {
+      "text": "kalkulator",
+      "category": "Benda",
+      "difficulty": "susah"
+    },
+    {
+      "text": "lari",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "lompat",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "renang",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "senam",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menulis",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "membaca",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "makan",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "minum",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "tidur",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "mandi",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "belajar",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menari",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menyanyi",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "melukis",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "memasak",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menyapu",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "mengepel",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "bersepeda",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "basket",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "futsal",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kasti",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menendang",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "melempar",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menangkap",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "mencuci",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menyiram",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menggambar",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "berhitung",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "berkebun",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "mengetik",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "memanjat",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menyelam",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "mengayuh",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menggosok",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "menjemur",
+      "category": "Aktivitas",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "badminton",
+      "category": "Aktivitas",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "pramuka",
+      "category": "Aktivitas",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "upacara",
+      "category": "Aktivitas",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "komparasi",
+      "category": "Aktivitas",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "diskusi",
+      "category": "Aktivitas",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "presentasi",
+      "category": "Aktivitas",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "bertapa",
+      "category": "Aktivitas",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "memanah",
+      "category": "Aktivitas",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "keluarga",
+      "category": "Aktivitas",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "selingan",
+      "category": "Aktivitas",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "meditasi",
+      "category": "Aktivitas",
+      "difficulty": "susah"
+    },
+    {
+      "text": "reboisasi",
+      "category": "Aktivitas",
+      "difficulty": "susah"
+    },
+    {
+      "text": "metamorfosis",
+      "category": "Aktivitas",
+      "difficulty": "susah"
+    },
+    {
+      "text": "navigasi",
+      "category": "Aktivitas",
+      "difficulty": "susah"
+    },
+    {
+      "text": "sosialisasi",
+      "category": "Aktivitas",
+      "difficulty": "susah"
+    },
+    {
+      "text": "uang",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pasar",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "bank",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "toko",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "harga",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "dompet",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kota",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "desa",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "jalan",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "taman",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "surat",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kertas",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "peta",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "bendera",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "lagu",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "musik",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kamera",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kunci",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kaca",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "roda",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "mobil",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "motor",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kapal",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pesawat",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kereta",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "karton",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pintu",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "jendela",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "atap",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pagar",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "sawah",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "hutan",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "gunung",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "laut",
+      "category": "Umum",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "hadiah",
+      "category": "Umum",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "tabungan",
+      "category": "Umum",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "diskon",
+      "category": "Umum",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "kwitansi",
+      "category": "Umum",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "stasiun",
+      "category": "Umum",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "bandara",
+      "category": "Umum",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "pelabuhan",
+      "category": "Umum",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "museum",
+      "category": "Umum",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "bioskop",
+      "category": "Umum",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "hotel",
+      "category": "Umum",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "investasi",
+      "category": "Umum",
+      "difficulty": "susah"
+    },
+    {
+      "text": "inflasi",
+      "category": "Umum",
+      "difficulty": "susah"
+    },
+    {
+      "text": "fasilitas",
+      "category": "Umum",
+      "difficulty": "susah"
+    },
+    {
+      "text": "teknologi",
+      "category": "Umum",
+      "difficulty": "susah"
+    },
+    {
+      "text": "komunikasi",
+      "category": "Umum",
+      "difficulty": "susah"
+    },
+    {
+      "text": "kuitansi",
+      "category": "Umum",
+      "difficulty": "susah"
+    },
+    {
+      "text": "apel",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pisang",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "jeruk",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "mangga",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "semangka",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "melon",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "anggur",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "nanas",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pepaya",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "alpukat",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "strawberry",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "durian",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "rambutan",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kelapa",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "salak",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "nangka",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "manggis",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "jambu",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "sirsak",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "sawo",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "duku",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "leci",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kelengkeng",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "pir",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "plum",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "ceri",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kedondong",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "belimbing",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kurma",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "markisa",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "kismis",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "bengkuang",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "lemon",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "timun",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "tomat",
+      "category": "Buah",
+      "difficulty": "mudah"
+    },
+    {
+      "text": "cempedak",
+      "category": "Buah",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "matoa",
+      "category": "Buah",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "zaitun",
+      "category": "Buah",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "delima",
+      "category": "Buah",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "buni",
+      "category": "Buah",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "kecapi",
+      "category": "Buah",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "gandaria",
+      "category": "Buah",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "kesemek",
+      "category": "Buah",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "menteng",
+      "category": "Buah",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "kranji",
+      "category": "Buah",
+      "difficulty": "sedang"
+    },
+    {
+      "text": "srikaya",
+      "category": "Buah",
+      "difficulty": "susah"
+    },
+    {
+      "text": "lobi-lobi",
+      "category": "Buah",
+      "difficulty": "susah"
+    },
+    {
+      "text": "jamblang",
+      "category": "Buah",
+      "difficulty": "susah"
+    },
+    {
+      "text": "cermai",
+      "category": "Buah",
+      "difficulty": "susah"
+    },
+    {
+      "text": "mengkudu",
+      "category": "Buah",
+      "difficulty": "susah"
+    }
+  ]
+}

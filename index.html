@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1220">
+<title>Tebak Kata</title>
+<link rel="stylesheet" href="css/style.css">
+<script>
+try {
+  var t = localStorage.getItem('tebakkata.theme');
+  if (t === 'terang' || t === 'gelap') {
+    document.documentElement.setAttribute('data-theme', t === 'terang' ? 'light' : 'dark');
+    var m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', t === 'terang' ? '#f1f5f9' : '#0b1220');
+  }
+} catch (e) {}
+</script>
+</head>
+<body>
+
+<div id="toast" class="toast"></div>
+
+<section id="screen-home" class="screen active">
+  <header class="app-header home">
+    <div>
+      <h1>Tebak Kata</h1>
+      <p class="subtitle">Pandu permainan tebak kata</p>
+    </div>
+    <div class="home-actions">
+      <button id="sound-toggle" class="btn back">Suara: On</button>
+      <button id="theme-toggle" class="btn back">Tema: Gelap</button>
+    </div>
+  </header>
+  <div class="home-menu">
+    <button class="menu-btn" id="go-bank">
+      <span class="menu-title">Bank Kata</span>
+      <span class="menu-meta" id="bank-count"></span>
+    </button>
+    <button class="menu-btn" id="go-games">
+      <span class="menu-title">Daftar Permainan</span>
+      <span class="menu-meta" id="games-count"></span>
+    </button>
+  </div>
+  <div class="home-backup">
+    <button class="btn ghost" id="btn-export-all">Ekspor Backup</button>
+    <button class="btn ghost" id="btn-import-all">Impor Backup</button>
+  </div>
+</section>
+
+<section id="screen-bank" class="screen">
+  <header class="app-header row">
+    <button class="btn back" id="bank-back">&#8592; Kembali</button>
+    <h2>Bank Kata</h2>
+  </header>
+
+  <div class="card">
+    <details class="format-info">
+      <summary>Lihat format import (JSON)</summary>
+      <pre id="format-sample"></pre>
+      <p class="hint">Field wajib: <b>text</b>. Opsional: <b>category</b> (default "Umum") dan
+        <b>difficulty</b> (mudah/sedang/susah, default sedang). Impor akan mengganti seluruh bank kata.</p>
+    </details>
+    <div class="form-row">
+      <button class="btn ghost" id="bank-export">Ekspor Kata</button>
+      <button class="btn ghost" id="bank-import">Impor Kata</button>
+    </div>
+    <button class="btn ghost block" id="bank-example">Unduh Contoh Format</button>
+  </div>
+
+  <div class="card">
+    <h3 id="bank-form-title">Tambah Kata</h3>
+    <div class="form-row">
+      <input id="word-text" type="text" placeholder="Kata" autocomplete="off">
+      <input id="word-cat" type="text" list="cat-list" placeholder="Kategori" autocomplete="off">
+      <datalist id="cat-list"></datalist>
+      <select id="word-diff">
+        <option value="mudah">Mudah</option>
+        <option value="sedang">Sedang</option>
+        <option value="susah">Susah</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <button class="btn primary" id="word-save">Tambah</button>
+      <button class="btn ghost hidden" id="word-cancel">Batal</button>
+    </div>
+
+    <details class="bulk">
+      <summary>Tambah massal (satu kata per baris)</summary>
+      <p class="hint">Kategori &amp; kesulitan di atas dipakai untuk semua baris.</p>
+      <textarea id="bulk-text" rows="4" placeholder="kucing&#10;anjing&#10;sapi"></textarea>
+      <button class="btn" id="bulk-add">Tambah Massal</button>
+    </details>
+  </div>
+
+  <div class="card">
+    <div class="form-row filters">
+      <input id="filter-search" type="search" placeholder="Cari kata...">
+      <select id="filter-cat"><option value="">Semua kategori</option></select>
+      <select id="filter-diff">
+        <option value="">Semua kesulitan</option>
+        <option value="mudah">Mudah</option>
+        <option value="sedang">Sedang</option>
+        <option value="susah">Susah</option>
+      </select>
+    </div>
+    <div id="word-list" class="word-list"></div>
+  </div>
+</section>
+
+<section id="screen-games" class="screen">
+  <header class="app-header row">
+    <button class="btn back" id="games-back">&#8592; Kembali</button>
+    <h2>Daftar Permainan</h2>
+    <button class="btn primary" id="go-create">+ Buat Baru</button>
+  </header>
+  <div id="games-list" class="games-list"></div>
+</section>
+
+<section id="screen-create" class="screen">
+  <header class="app-header row">
+    <button class="btn back" id="create-back">&#8592; Kembali</button>
+    <h2>Buat Permainan</h2>
+  </header>
+
+  <div class="card">
+    <label class="field">
+      <span>Nama permainan</span>
+      <input id="g-name" type="text">
+    </label>
+
+    <div class="form-row">
+      <label class="field">
+        <span>Jumlah tim</span>
+        <input id="g-teams" type="number" min="1" max="50" value="2">
+      </label>
+      <label class="field">
+        <span>Waktu per tim (menit)</span>
+        <input id="g-minutes" type="number" min="1" max="120" value="1">
+      </label>
+      <label class="field">
+        <span>Kata per tim</span>
+        <input id="g-words" type="number" min="1" max="100" value="10">
+      </label>
+    </div>
+
+    <div class="chips" id="minute-chips">
+      <button class="chip" data-min="1">1 menit</button>
+      <button class="chip" data-min="2">2 menit</button>
+      <button class="chip" data-min="3">3 menit</button>
+      <button class="chip" data-min="5">5 menit</button>
+    </div>
+
+    <div class="field">
+      <span>Kesulitan</span>
+      <div id="diff-checks" class="checks">
+        <label><input type="checkbox" value="mudah"> Mudah</label>
+        <label><input type="checkbox" value="sedang"> Sedang</label>
+        <label><input type="checkbox" value="susah"> Susah</label>
+      </div>
+      <p class="hint">Tidak ada yang dicentang = semua kesulitan.</p>
+    </div>
+
+    <div class="field">
+      <span>Kategori bank kata</span>
+      <div id="cat-checks" class="checks"></div>
+      <p class="hint">Tidak ada yang dicentang = semua kategori.</p>
+    </div>
+
+    <div id="create-count" class="info-box"></div>
+
+    <button class="btn primary block" id="g-create">Buat Permainan</button>
+  </div>
+</section>
+
+<section id="screen-game" class="screen">
+  <header class="app-header row">
+    <button class="btn back" id="detail-back">&#8592; Kembali</button>
+    <h2 id="detail-name"></h2>
+  </header>
+
+  <div class="card">
+    <div id="detail-meta" class="meta"></div>
+    <div id="detail-count" class="info-box"></div>
+  </div>
+
+  <div id="team-list" class="team-list"></div>
+
+  <div class="card row spread">
+    <button class="btn danger" id="detail-delete">Hapus Permainan</button>
+  </div>
+</section>
+
+<section id="screen-play" class="screen screen-play">
+  <div class="play-top">
+    <div class="play-team">
+      <div id="play-team-name" class="play-team-name">Tim 1</div>
+      <div id="play-attempt" class="play-attempt">Percobaan ke-1</div>
+    </div>
+    <div id="play-timer" class="play-timer">01:00</div>
+    <button id="play-exit" class="play-exit" aria-label="Keluar">&times;</button>
+  </div>
+  <div id="play-progress" class="play-progress">Kata 1/10</div>
+  <div class="play-word-wrap">
+    <div id="play-word" class="play-word">...</div>
+  </div>
+  <div id="play-hint" class="play-hint"></div>
+  <div class="play-utils">
+    <button id="play-sound" class="sound-pill" type="button">Suara: On</button>
+  </div>
+  <div class="play-actions">
+    <button id="btn-next" class="btn-next">Next</button>
+    <button id="btn-pas" class="btn-pas">Pas</button>
+  </div>
+</section>
+
+<section id="screen-result" class="screen">
+  <header class="app-header"><h2>Hasil Sesi</h2></header>
+  <div class="card result-card">
+    <div id="res-team" class="result-team">Tim 1</div>
+    <div id="res-attempt" class="result-sub">Percobaan ke-1</div>
+    <div id="res-score" class="result-score">0/10</div>
+    <div class="result-label">kata tertebak</div>
+    <div id="res-reason" class="result-reason"></div>
+    <div id="res-words" class="result-words"></div>
+  </div>
+  <button class="btn primary block" id="res-continue">Lanjut ke Daftar Tim</button>
+</section>
+
+<input type="file" id="import-file" accept=".json,application/json" hidden>
+
+<script src="js/store.js"></script>
+<script src="js/bank.js"></script>
+<script src="js/game.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/play.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
