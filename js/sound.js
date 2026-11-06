@@ -2,6 +2,9 @@ const Sound = {
   enabled: true,
   ctx: null,
   heartNextAt: 0,
+  onBeat: null,
+  limiter: null,
+  limiterCtx: null,
 
   init() {
     this.enabled = localStorage.getItem('tebakkata.sound') !== 'off';
@@ -51,6 +54,21 @@ const Sound = {
     return this.ctx;
   },
 
+  out(ctx) {
+    if (this.limiter && this.limiterCtx === ctx) return this.limiter;
+    if (!ctx.createDynamicsCompressor) return ctx.destination;
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -6;
+    comp.knee.value = 6;
+    comp.ratio.value = 20;
+    comp.attack.value = 0.003;
+    comp.release.value = 0.25;
+    comp.connect(ctx.destination);
+    this.limiter = comp;
+    this.limiterCtx = ctx;
+    return comp;
+  },
+
   wordReveal() {
     const ctx = this.ensure();
     if (!ctx) return;
@@ -65,7 +83,7 @@ const Sound = {
     g.gain.exponentialRampToValueAtTime(0.3, t + 0.01);
     g.gain.exponentialRampToValueAtTime(0.0001, t + 0.18);
     osc.connect(g);
-    g.connect(ctx.destination);
+    g.connect(this.out(ctx));
     osc.start(t);
     osc.stop(t + 0.2);
 
@@ -85,7 +103,7 @@ const Sound = {
     ng.gain.exponentialRampToValueAtTime(0.0001, t + 0.12);
     src.connect(bp);
     bp.connect(ng);
-    ng.connect(ctx.destination);
+    ng.connect(this.out(ctx));
     src.start(t);
     src.stop(t + 0.13);
   },
@@ -104,7 +122,7 @@ const Sound = {
     sg.gain.exponentialRampToValueAtTime(0.18, t + 0.02);
     sg.gain.exponentialRampToValueAtTime(0.0001, t + 0.16);
     sweep.connect(sg);
-    sg.connect(ctx.destination);
+    sg.connect(this.out(ctx));
     sweep.start(t);
     sweep.stop(t + 0.18);
 
@@ -116,7 +134,7 @@ const Sound = {
     dg.gain.exponentialRampToValueAtTime(0.28, t + 0.11);
     dg.gain.exponentialRampToValueAtTime(0.0001, t + 0.42);
     ding.connect(dg);
-    dg.connect(ctx.destination);
+    dg.connect(this.out(ctx));
     ding.start(t + 0.09);
     ding.stop(t + 0.45);
   },
@@ -139,13 +157,36 @@ const Sound = {
     g.gain.exponentialRampToValueAtTime(0.0001, t + 0.38);
     osc.connect(lp);
     lp.connect(g);
-    g.connect(ctx.destination);
+    g.connect(this.out(ctx));
     osc.start(t);
     osc.stop(t + 0.4);
   },
 
+  failSound() {
+    const ctx = this.ensure();
+    if (!ctx) return;
+    const t = ctx.currentTime;
+
+    const note = (freq, at, dur) => {
+      const osc = ctx.createOscillator();
+      osc.type = 'square';
+      osc.frequency.setValueAtTime(freq, at);
+      const g = ctx.createGain();
+      g.gain.setValueAtTime(0.0001, at);
+      g.gain.exponentialRampToValueAtTime(0.22, at + 0.012);
+      g.gain.exponentialRampToValueAtTime(0.0001, at + dur);
+      osc.connect(g);
+      g.connect(this.out(ctx));
+      osc.start(at);
+      osc.stop(at + dur + 0.02);
+    };
+    note(349.23, t, 0.11);
+    note(261.63, t + 0.13, 0.18);
+  },
+
   heartInterval(remain) {
-    if (remain > 10000) return 1100;
+    if (remain > 10000) return 1600;
+    if (remain > 7000) return 1100;
     if (remain > 5000) return 800;
     if (remain > 3000) return 550;
     if (remain > 1500) return 380;
@@ -153,31 +194,27 @@ const Sound = {
   },
 
   heartGain(remain) {
-    if (remain > 10000) return 0.24;
-    if (remain > 3000) return 0.45;
-    return 0.55;
+    if (remain > 10000) return 0.55;
+    if (remain > 3000) return 0.75;
+    return 0.95;
   },
 
   heartTick(remain) {
-    if (!this.enabled) { this.heartStop(); return; }
-    const ctx = this.ensure();
-    if (!ctx) return;
     const now = Date.now();
     const interval = this.heartInterval(remain);
-    if (!this.heartNextAt) {
-      this.thump(ctx, this.heartGain(remain));
-      this.heartNextAt = now + interval;
-      return;
-    }
-    if (now >= this.heartNextAt) {
-      this.thump(ctx, this.heartGain(remain));
+    if (!this.heartNextAt || now >= this.heartNextAt) {
+      if (this.enabled) {
+        const ctx = this.ensure();
+        if (ctx) this.thump(ctx, this.heartGain(remain));
+      }
+      if (this.onBeat) this.onBeat(interval);
       this.heartNextAt = now + interval;
     }
   },
 
   thump(ctx, peak) {
     const t = ctx.currentTime;
-    const beat = (delay, dur, from, to, gain) => {
+    const beat = (delay, dur, attack, from, to, gain) => {
       const s = t + delay;
       const osc = ctx.createOscillator();
       osc.type = 'sine';
@@ -185,15 +222,15 @@ const Sound = {
       osc.frequency.exponentialRampToValueAtTime(to, s + dur);
       const g = ctx.createGain();
       g.gain.setValueAtTime(0.0001, s);
-      g.gain.exponentialRampToValueAtTime(gain, s + 0.015);
+      g.gain.exponentialRampToValueAtTime(gain, s + attack);
       g.gain.exponentialRampToValueAtTime(0.0001, s + dur);
       osc.connect(g);
-      g.connect(ctx.destination);
+      g.connect(this.out(ctx));
       osc.start(s);
       osc.stop(s + dur + 0.02);
     };
-    beat(0, 0.14, 75, 55, peak);
-    beat(0.17, 0.12, 62, 48, peak * 0.7);
+    beat(0, 0.28, 0.04, 150, 120, peak);
+    beat(0.19, 0.22, 0.04, 130, 105, peak * 0.7);
   },
 
   heartStop() {
@@ -203,43 +240,54 @@ const Sound = {
   endSound(reason) {
     this.heartStop();
     if (!this.enabled || reason === 'exit') return;
+    this.celebrate();
+  },
+
+  celebrate() {
     const ctx = this.ensure();
     if (!ctx) return;
     const t = ctx.currentTime;
 
-    if (reason === 'time') {
+    const note = (freq, at, dur, gain, type) => {
       const osc = ctx.createOscillator();
-      osc.type = 'sawtooth';
-      osc.frequency.setValueAtTime(130, t);
-      osc.frequency.exponentialRampToValueAtTime(70, t + 0.7);
-      const lp = ctx.createBiquadFilter();
-      lp.type = 'lowpass';
-      lp.frequency.value = 500;
+      osc.type = type || 'sine';
+      osc.frequency.setValueAtTime(freq, at);
       const g = ctx.createGain();
-      g.gain.setValueAtTime(0.0001, t);
-      g.gain.exponentialRampToValueAtTime(0.3, t + 0.02);
-      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.7);
-      osc.connect(lp);
-      lp.connect(g);
-      g.connect(ctx.destination);
-      osc.start(t);
-      osc.stop(t + 0.75);
-    } else if (reason === 'words') {
-      const note = (freq, at, dur, gain) => {
-        const osc = ctx.createOscillator();
-        osc.type = 'sine';
-        osc.frequency.value = freq;
-        const g = ctx.createGain();
-        g.gain.setValueAtTime(0.0001, at);
-        g.gain.exponentialRampToValueAtTime(gain, at + 0.02);
-        g.gain.exponentialRampToValueAtTime(0.0001, at + dur);
-        osc.connect(g);
-        g.connect(ctx.destination);
-        osc.start(at);
-        osc.stop(at + dur + 0.02);
-      };
-      note(523.25, t, 0.2, 0.25);
-      note(783.99, t + 0.18, 0.4, 0.25);
+      g.gain.setValueAtTime(0.0001, at);
+      g.gain.exponentialRampToValueAtTime(gain, at + 0.015);
+      g.gain.exponentialRampToValueAtTime(0.0001, at + dur);
+      osc.connect(g);
+      g.connect(this.out(ctx));
+      osc.start(at);
+      osc.stop(at + dur + 0.02);
+    };
+
+    const len = Math.floor(ctx.sampleRate * 0.18);
+    const buf = ctx.createBuffer(1, len, ctx.sampleRate);
+    const data = buf.getChannelData(0);
+    for (let i = 0; i < len; i++) data[i] = Math.random() * 2 - 1;
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    const bp = ctx.createBiquadFilter();
+    bp.type = 'bandpass';
+    bp.frequency.value = 2800;
+    bp.Q.value = 0.8;
+    const ng = ctx.createGain();
+    ng.gain.setValueAtTime(0.18, t);
+    ng.gain.exponentialRampToValueAtTime(0.0001, t + 0.18);
+    src.connect(bp);
+    bp.connect(ng);
+    ng.connect(this.out(ctx));
+    src.start(t);
+    src.stop(t + 0.19);
+
+    const notes = [523.25, 659.25, 783.99, 1046.5, 1318.5, 1568.0];
+    notes.forEach((f, i) => note(f, t + i * 0.065, 0.16, 0.2, 'triangle'));
+
+    for (let i = 0; i < 5; i++) {
+      const freq = 1600 + Math.random() * 900;
+      const at = t + 0.1 + Math.random() * 0.5;
+      note(freq, at, 0.07, 0.14, 'sine');
     }
   }
 };

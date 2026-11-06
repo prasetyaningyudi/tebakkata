@@ -6,10 +6,12 @@ const Play = {
   init() {
     document.getElementById('btn-pas').onclick = () => this.advance('pas');
     document.getElementById('btn-next').onclick = () => this.advance('next');
+    document.getElementById('btn-fail').onclick = () => this.advance('fail');
     document.getElementById('play-exit').onclick = () => this.exit();
     document.getElementById('res-continue').onclick = () => {
       if (this.resultGameId) GameDetail.open(this.resultGameId);
     };
+    Sound.onBeat = interval => this.wordPulse(interval);
   },
 
   start(gameId, teamIndex) {
@@ -42,6 +44,9 @@ const Play = {
     this.game = game;
     if (game.activeSession && !Array.isArray(game.activeSession.guessed)) {
       game.activeSession.guessed = [];
+    }
+    if (game.activeSession && !Array.isArray(game.activeSession.failed)) {
+      game.activeSession.failed = [];
     }
     nav('screen-play');
     this.render();
@@ -82,6 +87,8 @@ const Play = {
     el.style.animation = 'none';
     void el.offsetWidth;
     el.style.animation = '';
+    el.style.transition = '';
+    el.style.transform = '';
 
     document.getElementById('play-progress').textContent =
       'Tertebak ' + (s.guessed || []).length + '/' + s.pool.length;
@@ -92,7 +99,19 @@ const Play = {
 
     if (sfx === 'next') Sound.nextSound();
     else if (sfx === 'pas') Sound.pasSound();
+    else if (sfx === 'fail') Sound.failSound();
     else Sound.wordReveal();
+  },
+
+  wordPulse(interval) {
+    const el = document.getElementById('play-word');
+    if (!el || !el.style) return;
+    const dur = Math.max(80, Math.round(interval * 0.6));
+    el.style.transition = 'none';
+    el.style.transform = 'scale(.92)';
+    void el.offsetWidth;
+    el.style.transition = 'transform ' + dur + 'ms ease-out';
+    el.style.transform = 'scale(1)';
   },
 
   startTimer() {
@@ -130,14 +149,21 @@ const Play = {
     const s = this.session();
     if (!s) return;
     if (!Array.isArray(s.guessed)) s.guessed = [];
+    if (!Array.isArray(s.failed)) s.failed = [];
 
-    if (mode === 'next') {
-      if (!s.guessed.includes(s.currentId)) {
-        s.guessed.push(s.currentId);
+    const done = id => s.guessed.includes(id) || s.failed.includes(id);
+
+    if (mode === 'next' || mode === 'fail') {
+      const list = mode === 'next' ? s.guessed : s.failed;
+      if (!list.includes(s.currentId)) {
+        list.push(s.currentId);
         const a = this.attempt();
-        if (a) a.guessed = s.guessed.slice();
+        if (a) {
+          if (mode === 'next') a.guessed = s.guessed.slice();
+          else a.failed = s.failed.slice();
+        }
       }
-      if (s.guessed.length >= s.pool.length) {
+      if (s.guessed.length + s.failed.length >= s.pool.length) {
         Store.save();
         this.end('words');
         return;
@@ -148,7 +174,7 @@ const Play = {
     let target = null;
     for (let k = 1; k <= s.pool.length; k++) {
       const ni = (idx + k) % s.pool.length;
-      if (!s.guessed.includes(s.pool[ni])) {
+      if (!done(s.pool[ni])) {
         target = s.pool[ni];
         break;
       }
@@ -164,7 +190,7 @@ const Play = {
       if (a) a.shown = s.shown.slice();
     }
     Store.save();
-    this.renderWord(mode === 'next' ? 'next' : 'pas');
+    this.renderWord(mode === 'next' ? 'next' : mode === 'fail' ? 'fail' : 'pas');
   },
 
   end(reason) {
@@ -188,9 +214,12 @@ const Play = {
     document.getElementById('res-attempt').textContent =
       'Percobaan ke-' + team.attempts.length;
     document.getElementById('res-score').textContent = guessed.length + '/' + poolSize;
+    const failed = (a && a.failed) || [];
     document.getElementById('res-reason').textContent =
       reason === 'time' ? 'Waktu habis' :
-      reason === 'words' ? 'Semua kata tertebak' : 'Sesi dihentikan';
+      reason === 'words'
+        ? (failed.length ? 'Semua kata selesai' : 'Semua kata tertebak')
+        : 'Sesi dihentikan';
 
     const words = guessed
       .map(id => Store.data.words.find(w => w.id === id))

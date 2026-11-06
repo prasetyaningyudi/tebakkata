@@ -90,7 +90,8 @@ function commitAttempt(game, teamIndex, pool) {
     reason: null,
     poolSize: pool.length,
     shown: [pool[0].id],
-    guessed: []
+    guessed: [],
+    failed: []
   };
   game.teams[teamIndex].attempts.push(attempt);
   game.activeSession = {
@@ -99,6 +100,7 @@ function commitAttempt(game, teamIndex, pool) {
     pool: pool.map(w => w.id),
     shown: [pool[0].id],
     guessed: [],
+    failed: [],
     currentId: pool[0].id
   };
   Store.save();
@@ -114,6 +116,7 @@ function finishAttempt(game, reason) {
     attempt.reason = reason;
     attempt.shown = s.shown.slice();
     attempt.guessed = (s.guessed || []).slice();
+    attempt.failed = (s.failed || []).slice();
   }
   game.activeSession = null;
   Store.save();
@@ -128,7 +131,11 @@ function teamStatus(game, teamIndex) {
   const last = team.attempts[team.attempts.length - 1];
   if (!last) return { label: 'Siap dimainkan', cls: '' };
   if (last.reason === 'time') return { label: 'Selesai (waktu habis)', cls: 'done' };
-  if (last.reason === 'words') return { label: 'Selesai (semua tertebak)', cls: 'done' };
+  if (last.reason === 'words') {
+    return (last.failed || []).length
+      ? { label: 'Selesai (semua kata habis)', cls: 'done' }
+      : { label: 'Selesai (semua tertebak)', cls: 'done' };
+  }
   return { label: 'Dihentikan', cls: '' };
 }
 
